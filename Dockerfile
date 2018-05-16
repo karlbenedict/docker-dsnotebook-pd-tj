@@ -12,6 +12,13 @@ RUN apt-get update && \
 	apt-get install -y --no-install-recommends \
 	texlive
 
+## Taskjuggler and Ruby
+RUN apt-get update && \
+	apt-get purge ruby && \
+	apt-get install -y --no-install-recommends \
+	ruby
+RUN gem install taskjuggler
+
 RUN mkdir /home/root
 COPY startup.sh /home/root/startup.sh
 COPY refreshContent.sh /home/root/refreshContent.sh
