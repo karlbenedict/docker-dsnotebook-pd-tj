@@ -5,9 +5,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - type: "bind"
-        source: "~/"
-        target: "/home/jovyan"
+      - ~/:/home/jovyan
     restart: on-failure
     
     # replace the hashed password in this command with your own generated with IPython.lib.passwd
